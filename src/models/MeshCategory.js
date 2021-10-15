@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const { getConnection } = require('../db');
-
 const sequelize = getConnection();
 
 const MeshCategory = sequelize.define('MeshCategory', {
@@ -25,9 +24,5 @@ const MeshCategory = sequelize.define('MeshCategory', {
   tableName: 'mesh_categories',
 });
 
-MeshCategory.associations = (models) => MeshCategory.hasMany(models.MeshCategoryChild, {
-  foreignKey: 'parent_id',
-  as: 'children',
-});
 
 module.exports = MeshCategory;

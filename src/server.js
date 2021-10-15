@@ -5,7 +5,7 @@ const {  MeshCategory, MeshCategoryChild } = require('./models');
 (async () => {
     try {
       await sequelize.authenticate();
-      await sequelize.sync({ force: true });
+      await sequelize.sync({ force: false });
       const categories = await MeshCategory.findAll();
       console.log(categories)
       console.log('Connection has been established successfully.');

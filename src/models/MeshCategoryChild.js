@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const { getConnection } = require('../db');
+const MeshCategory = require('./MeshCategory');
 
 const sequelize = getConnection();
 
@@ -12,22 +13,16 @@ const MeshCategoryChild = sequelize.define('MeshCategoryChild', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     field: 'name',
   },
   code: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
     field: 'code',
   }
 }, {
   tableName: 'mesh_category_children',
 });
 
-MeshCategoryChild.associations = (models) => MeshCategoryChild.belongsTo(models.MeshCategory, {
-  foreignKey: 'parent_id',
-  as: 'parent',
-});
 
 module.exports = MeshCategoryChild;
