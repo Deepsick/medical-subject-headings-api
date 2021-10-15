@@ -112,13 +112,12 @@ const scrapHeadings = async () => {
       });
     });
 
-    console.log(parsedCategories);
+    return parsedCategories;
   } catch (error) {
     console.log(error);
   }
 };
 
 
-(async () => {
-  await scrapHeadings();
-})();
+module.exports = { scrapHeadings };
+
