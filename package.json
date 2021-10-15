@@ -19,6 +19,10 @@
   "homepage": "https://github.com/Deepsick/medical-subject-headings-api#readme",
   "dependencies": {
     "axios": "0.23.0",
-    "cheerio": "1.0.0-rc.10"
+    "cheerio": "1.0.0-rc.10",
+    "dotenv": "10.0.0",
+    "pg": "8.7.1",
+    "pg-hstore": "2.3.4",
+    "sequelize": "6.7.0"
   }
 }
